@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>11-28-2018 Calc</title>
+  </head>
+  <script>
+    function num(x){
+      document.form.textbox.value = document.form.textbox.value + x;
+    }
+    function go(){
+      let x = document.form.textbox.value;
+      if(x) {
+        document.form.textbox.value = eval(document.form.textbox.value)
+      }
+    }
+    function c() {
+      document.form.textbox.value = "";
+    }
+    function back(){
+      let x = document.form.textbox.value;
+      document.form.textbox.value = x.substring(0,x.length-1);
+    }
+  </script>
+  <style>
+    * {
+      padding: 0px;
+      margin: 0px;
+    }
+    .button {
+      width: 50px;
+      height: 50px;
+      font-size: 25px;
+      margin: 0px;
+    }
+    .text{
+      height: 50px;
+      width: 192px;
+      padding: 5px;
+      margin-left:2px;
+    }
+  </style>
+  <body>
+    <form name="form">
+      <input class="text" name="textbox" type="text">
+    </form>
+    <table>
+      <tr>
+        <td><input class="button" type="button" name="" onclick="c()" value="C"></td>
+        <td><input class="button" type="button" name="" onclick="back()" value="<"></td>
+        <td><input class="button" type="button" name="" onclick="num('/')" value="/"></td>
+        <td><input class="button" type="button" name="" onclick="num('*')" value="*"></td>
+      </tr>
+      <tr>
+        <td><input class="button" type="button" name="" onclick="num(1)" value="1"></td>
+        <td><input class="button" type="button" name="" onclick="num(2)" value="2"></td>
+        <td><input class="button" type="button" name="" onclick="num(3)" value="3"></td>
+        <td><input class="button" type="button" name="" onclick="num('+')" value="+"></td>
+      </tr>
+      <tr>
+        <td><input class="button" type="button" name="" onclick="num(4)" value="4"></td>
+        <td><input class="button" type="button" name="" onclick="num(5)" value="5"></td>
+        <td><input class="button" type="button" name="" onclick="num(6)" value="6"></td>
+        <td><input class="button" type="button" name="" onclick="num('-')" value="-"></td>
+      </tr>
+      <tr>
+        <td><input class="button" type="button" name="" onclick="num(7)" value="7"></td>
+        <td><input class="button" type="button" name="" onclick="num(8)" value="8"></td>
+        <td><input class="button" type="button" name="" onclick="num(9)" value="9"></td>
+        <td><input class="button" type="button" name="" onclick="go()" value="="></td>
+      </tr>
+      <tr>
+        <td><input class="button" type="button" name="" onclick="num(0)" value="0"></td>
+        <td><input class="button" type="button" name="" onclick="num('.')" value="."></td>
+      </tr>
+    </table>
+  </body>
+</html>
